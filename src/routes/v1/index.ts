@@ -24,12 +24,12 @@ import disputesRoutes from "../disputes.routes";
 import escrowRoutes from "../escrow.routes";
 import walletRoutes from "../wallets.routes";
 import consentRoutes from "../consent.routes";
+import bulkRoutes from "../bulk.routes";
 import integrationsRoutes from "../integrations.routes";
 import notesRoutes from "../notes.routes";
 import deepLinkRoutes from "../deepLink.routes";
 import { BookingsService } from "../../services/bookings.service";
 import { logger } from "../../utils/logger";
-import { VerificationService } from "../../services/verification.service";
 import { notificationCleanupService } from "../../services/notification-cleanup.service";
 import { adminAllowlistMiddleware } from "../middleware/ipFilter.middleware";
 import { asyncHandler } from "../../utils/asyncHandler.utils";
@@ -56,6 +56,7 @@ router.use("/goals", goalRoutes);
 router.use("/learners", learnerRoutes);
 router.use("/", exportRoutes);
 router.use("/consent", consentRoutes);
+router.use("/bulk", bulkRoutes);
 
 // Apply IP whitelisting to all admin routes
 router.use("/admin", asyncHandler(adminAllowlistMiddleware));

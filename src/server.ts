@@ -40,11 +40,11 @@ import {
 import { initializeEmailTemplates } from "./services/template-initializer.service";
 import { logger } from "./utils/logger.utils";
 import { validateRequiredTables } from "./utils/table-validator.utils";
-<<<<<<< fix/438-implement-gdpr-data-export
+import "../queues/bulk.queue";
 import "../queues/export.queue";
-=======
+import "../queues/export.queue";
 import { startPoolMonitor, stopPoolMonitor } from "./utils/pool-monitor.utils";
->>>>>>> main
+
 
 // Validate that all required tables exist (from migrations)
 // This replaces the anti-pattern of creating tables at runtime via DDL
